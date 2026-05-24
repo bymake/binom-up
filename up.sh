@@ -117,7 +117,7 @@ echo "🧹 [6/8] 正在清理旧容器并修改 .env 配置..."
 docker rm -f binom_traffic_distribution binom_protect 2>/dev/null || true
 
 sudo sed -i 's|BINOM_LICENSE_HOST=license.binom.network|BINOM_LICENSE_HOST=lic.xxok.ccwu.cc|' "$ENV_FILE"
-sudo sed -i '/^ADDRESS=/d;$a ADDRESS=https://lic.xxok.ccwu.cc' "$ENV_FILE"
+# sudo sed -i '/^ADDRESS=/d;$a ADDRESS=https://lic.xxok.ccwu.cc' "$ENV_FILE"
 show_progress 1.0 "-> 旧容器已销毁，.env 配置授权修正"
 
 echo "🐳 [7/8] 正在保持原版本重新创建容器..."
